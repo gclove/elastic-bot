@@ -1,12 +1,13 @@
 sudo: enabled
-
-env:
-  - ELASTIC_VERSION=6.4.2
+language: python
+python:
+  - "3.6"
 
 services:
   - docker
 
 script:
+- ELASTIC_VERSION=$(python get_version.py)
 - docker pull docker.elastic.co/elasticsearch/elasticsearch:$ELASTIC_VERSION
 - docker tag docker.elastic.co/elasticsearch/elasticsearch:$ELASTIC_VERSION  $DOCKER_USERNAME/elasticsearch:$ELASTIC_VERSION
 - docker images
