@@ -1,7 +1,7 @@
 sudo: enabled
 
 env:
-    ELASTIC_VERSION:6.4.2
+  - ELASTIC_VERSION=6.4.2
 
 services:
   - docker
