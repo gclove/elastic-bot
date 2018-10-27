@@ -9,5 +9,6 @@ script:
 - docker pull docker.elastic.co/elasticsearch/elasticsearch:6.4.2
 - docker images
 - docker tag docker.elastic.co/elasticsearch/elasticsearch:6.4.2  $DOCKER_USERNAME/elasticsearch:6.4.2
+- docker images
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 - docker push $DOCKER_USERNAME/$DOCKER_USERNAME/elasticsearch:6.4.2
