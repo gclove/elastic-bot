@@ -1,3 +1,1 @@
-import requests
-r = requests.get('https://api.github.com/repos/elastic/elasticsearch/tags')
-print(r.json()[0]['name'][1:])
+print('6.5.4')
